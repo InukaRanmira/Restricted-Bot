@@ -1,5 +1,3 @@
-#Github.com/Vasusen-code
-
 import os
 from .. import bot as Drone
 from telethon import events, Button
@@ -32,18 +30,22 @@ async def sett(event):
         os.rename(path, f'./{event.sender_id}.jpg')
         await t.edit("Temporary thumbnail saved!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="rem"))
-async def remt(event):  
-    Drone = event.client            
-    await event.edit('Trying.')
-    try:
-        os.remove(f'{event.sender_id}.jpg')
-        await event.edit('Removed!')
-    except Exception:
-        await event.edit("No thumbnail saved.")                        
-  
-@Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
-async def start(event):
-    text = "Send me Link of any message to clone it here, For private channel message, send invite link first.\n\n**SUPPORT:** @TeamDrone"
-    await start_srb(event, text)
+@Drone.on_message(filters.command("start"))
+async def startprivate(client, message):
+    if await forcesub(client, message):
+       return
+    #return
+    chat_id = message.from_user.id
+    if not await db.is_user_exist(chat_id):
+    file_id = "CAACAgUAAxkBAAEHlRdj3irNZYBJdsijeOXh2WPOCz1LBAACUQkAAktIQFYewZtYpX7fFy4E"
+    await client.send_sticker(message.chat.id, file_id, reply_markup=start_menu)
+    text = f"Hi {message.from_user.mention}, 👋 Hello {message.from_user.first_name}\n\nI am Save Restricted Contents Bot, I can save files of restricted channels as well as group.
+\n\n\n\nFOR PUBLIC CHATS\n\n> just send post/s link\n\nFOR PRIVATE CHATS\n\n> First send invite link of the chat\n\n> Then send post/s link\n\nPowered By SMΛЯT TΞϾH 🇱🇰(https://t.me/+c8oBVEKPAD84ZGY1)"
+    reply_markup = START_BUTTON  
+    await message.reply_text(
+        text=text,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+        quote=True
+    )
     
