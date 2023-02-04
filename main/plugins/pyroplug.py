@@ -1,5 +1,3 @@
-# Github.com/Vasusen-code
-
 import asyncio, time, os
 
 from .. import Bot, bot
@@ -110,7 +108,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, bulk=False):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**UPLOADING:**\n\n@Smart_TechLK',
                         edit,
                         time.time()
                     )
