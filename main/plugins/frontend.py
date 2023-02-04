@@ -1,5 +1,3 @@
-#Github.com/Vasusen-code
-
 import time, os
 
 from .. import bot as Drone
