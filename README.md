@@ -49,7 +49,7 @@ sudo docker-compose up --build
 
 The hard Way:
 
-- Fill vars in your fork in [this](https://github.com/vasusen-code/SaveRestrictedContentBot/blob/master/main/__init__.py) file as shown in this [picture](https://t.me/MaheshChauhan/36)
+- Fill vars in your fork in [this](https://github.com/InukaRanmira/Restricted-Bot/blob/master/main/__init__.py) file as shown in this [picture](https://t.me/MaheshChauhan/36)
 - enter all the below commands
 
 ```
@@ -64,10 +64,6 @@ python3 -m main
 - if you want bot to be running in background then enter `screen -S srcb` before `python3 -m main` 
 - after `python3 -m main`, click ctrl+A, ctrl+D
 - if you want to stop bot, then enter `screen -r srcb` and click ctrl+A then press K and enter Y.
-
-Deploy your bot on `Render`
-
-Tutorial - [Click here](https://telegra.ph/SRCB-on-Render-05-17)
 
 Deploy your bot on `heroku`
 
@@ -91,7 +87,5 @@ Buildpacks for manual deploy:
 - `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
 
 Deploy your bot on `Okteto` [Useless]
-  
-Tutorial for okteto - [click here](https://telegra.ph/Okteto-Deploy-04-01)
 
 [![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com)
